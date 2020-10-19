@@ -37,6 +37,8 @@ export const Header: React.SFC = () => {
         flexDirection: ["column", "row"],
         justifyContent: "space-between",
         alignItems: [null, "center"],
+        position: "relative",
+        zIndex: 1,
       }}
     >
       <Flex
@@ -79,7 +81,7 @@ export const Header: React.SFC = () => {
       <Flex
         sx={{
           flex: 1,
-          display: ["none",  "none", "flex"],
+          display: ["none", "none", "flex"],
           justifyContent: "flex-end",
           alignItems: "center",
         }}

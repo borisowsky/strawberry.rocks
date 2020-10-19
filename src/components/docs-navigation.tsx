@@ -78,15 +78,12 @@ const Nav: React.SFC = () => {
 export const DocsNavigation: React.SFC = () => {
   const [open, toggleOpen] = useToggle(false);
 
-  const menuType = useResponsiveValue(["overlay", "sidebar"]);
-
   return (
     <Fragment>
       <Box
         sx={{
-          px: 3,
+          px: 4,
           py: 4,
-          flex: "0 0 200px",
           display: ["none", "block"],
         }}
       >

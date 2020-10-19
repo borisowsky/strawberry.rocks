@@ -27,6 +27,7 @@ export default {
     primary: PRIMARY_COLOR,
     secondary: "#FF9FA9",
     muted: "#FFCED3",
+    mutedLight: "#EEE",
     accent: ACCENT_COLOR,
     backgroundDark: "#000000",
     textDark: "#ffffff",
@@ -152,7 +153,7 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      my: "1em",
+      mb: 4,
       fontSize: 5,
     },
     h2: {
@@ -160,7 +161,7 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      my: "1em",
+      mb: 4,
       fontSize: 4,
       textDecoration: "underline",
       textDecorationThickness: 2,
@@ -171,7 +172,7 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      my: "1em",
+      mb: 4,
       fontSize: 3,
     },
     h4: {
@@ -179,7 +180,7 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      my: "1em",
+      mb: 4,
       fontSize: 2,
     },
     h5: {
@@ -187,7 +188,7 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      my: "1em",
+      mb: 4,
       fontSize: 1,
     },
     h6: {
@@ -195,7 +196,7 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      my: "1em",
+      mb: 4,
       fontSize: 0,
     },
     p: {
@@ -203,17 +204,17 @@ export default {
       fontFamily: "body",
       fontWeight: "body",
       lineHeight: "body",
-      my: "1em",
+      mb: "1em",
       code: {
         backgroundColor: "muted",
         padding: 1,
       },
     },
     ul: {
-      my: "1em",
+      mb: 4,
     },
     ol: {
-      my: "1em",
+      mb: 4,
     },
     li: {
       listStyle: "inside",
@@ -251,6 +252,7 @@ export default {
       padding: 3,
       border: "2px solid",
       borderColor: "primary",
+      mb: 4,
 
       code: {
         color: "inherit",

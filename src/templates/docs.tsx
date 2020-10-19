@@ -9,9 +9,11 @@ import { DocsNavigation } from "../components/docs-navigation";
 import { DocsPageQuery } from "./__generated__/DocsPageQuery";
 import { EditOnGithub } from "../components/edit-on-github";
 import GraphQLExample from "../components/graphql-example";
+import { Logo } from "../components/logo";
+import { Link } from "../components/link";
 
 const DocsPage = ({
-  data: { file },
+  data: { file, github },
 }: {
   data: DocsPageQuery;
 }): React.ReactElement => (
@@ -30,14 +32,43 @@ const DocsPage = ({
     <Flex
       sx={{
         width: "100%",
-        maxWidth: 1200,
         mx: "auto",
         flex: 1,
+        mt: -160,
+        position: "relative",
+        zIndex: 0,
       }}
     >
-      <DocsNavigation />
+      <Box
+        sx={{
+          width: 300,
+          backgroundColor: "mutedLight",
+        }}
+      >
+        <Box
+          sx={{
+            my: 2,
+            px: 4,
+            py: 2,
+          }}
+        >
+          <Logo height="45" />
 
-      <Box sx={{ px: 4, pb: 6 }}>
+          <a>Strawberry docs</a>
+        </Box>
+
+        <Link
+          variant="version"
+          target="_blank"
+          href="https://pypi.org/project/strawberry-graphql/"
+        >
+          {github.repository.releases.nodes[0].tagName}
+        </Link>
+
+        <DocsNavigation />
+      </Box>
+
+      <Box sx={{ px: 5, pb: 6, pt: 160, maxWidth: 960, mx: "auto" }}>
         <MDXProvider
           components={{
             GraphQLExample,
@@ -56,6 +87,17 @@ export default DocsPage;
 
 export const pageQuery = graphql`
   query DocsPageQuery($relativePath: String!) {
+    github {
+      repository(owner: "strawberry-graphql", name: "strawberry") {
+        url
+        releases(last: 1) {
+          nodes {
+            tagName
+          }
+        }
+      }
+    }
+
     file(relativePath: { eq: $relativePath }) {
       relativePath
       childMdx {
